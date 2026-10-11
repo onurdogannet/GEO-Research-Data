@@ -1,0 +1,31 @@
+test_01_factorial_size (test_audit.AuditDataTests.test_01_factorial_size) ... ok
+test_02_balanced_query_families (test_audit.AuditDataTests.test_02_balanced_query_families) ... ok
+test_03_keys_and_foreign_keys (test_audit.AuditDataTests.test_03_keys_and_foreign_keys) ... ok
+test_04_parent_query_identity (test_audit.AuditDataTests.test_04_parent_query_identity) ... ok
+test_05_count_identities (test_audit.AuditDataTests.test_05_count_identities) ... ok
+test_06_strict_family_resolution (test_audit.AuditDataTests.test_06_strict_family_resolution) ... ok
+test_07_text_and_prompt_hashes (test_audit.AuditDataTests.test_07_text_and_prompt_hashes) ... ok
+test_08_item_text_and_display_position (test_audit.AuditDataTests.test_08_item_text_and_display_position) ... ok
+test_09_recommendation_text_and_counts (test_audit.AuditDataTests.test_09_recommendation_text_and_counts) ... ok
+test_10_decision_component_text (test_audit.AuditDataTests.test_10_decision_component_text) ... ok
+test_11_source_citation_count (test_audit.AuditDataTests.test_11_source_citation_count) ... ok
+test_12_coded_sources_have_no_url_fields (test_audit.AuditDataTests.test_12_coded_sources_have_no_url_fields) ... ok
+test_13_claim_links_and_evidence (test_audit.AuditDataTests.test_13_claim_links_and_evidence) ... ok
+test_14_stratified_support_sample (test_audit.AuditDataTests.test_14_stratified_support_sample) ... ok
+test_15_label_units_and_final_decisions (test_audit.AuditDataTests.test_15_label_units_and_final_decisions) ... ok
+test_16_source_support_final_labels (test_audit.AuditDataTests.test_16_source_support_final_labels) ... ok
+test_17_pair_definitions (test_audit.AuditDataTests.test_17_pair_definitions) ... ok
+test_18_pair_bounds_and_denominators (test_audit.AuditDataTests.test_18_pair_bounds_and_denominators) ... ok
+test_19_primary_effects_and_holm (test_audit.AuditDataTests.test_19_primary_effects_and_holm) ... ok
+test_20_summary_and_hash_manifest (test_audit.AuditDataTests.test_20_summary_and_hash_manifest) ... ok
+test_21_relative_positions_are_not_calendar_timestamps (test_audit.AuditDataTests.test_21_relative_positions_are_not_calendar_timestamps) ... ok
+test_22_jaccard (test_audit.StatisticFunctionTests.test_22_jaccard) ... ok
+test_23_prefix (test_audit.StatisticFunctionTests.test_23_prefix) ... ok
+test_24_holm (test_audit.StatisticFunctionTests.test_24_holm) ... ok
+test_25_kappa (test_audit.StatisticFunctionTests.test_25_kappa) ... ok
+test_26_interval (test_audit.StatisticFunctionTests.test_26_interval) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 8.287s
+
+OK

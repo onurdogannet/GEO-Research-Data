@@ -1,0 +1,9 @@
+system,support,count,n,proportion,weighted_proportion
+A,fully_supported,131,200,0.655,0.6541583257506824
+A,partially_supported,36,200,0.18,0.18063694267515928
+A,unsupported,15,200,0.075,0.07559599636032757
+A,inaccessible,18,200,0.09,0.08960873521383078
+B,fully_supported,148,200,0.74,0.7389473684210526
+B,partially_supported,28,200,0.14,0.14049342105263157
+B,unsupported,14,200,0.07,0.07115131578947366
+B,inaccessible,10,200,0.05,0.0494078947368421

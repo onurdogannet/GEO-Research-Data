@@ -1,0 +1,4 @@
+Proposed manuscript Data Availability Statement (verify before use):
+The retained processed dataset and analysis code used for the reported statistical results are available in the accompanying research repository at [persistent DOI] and [GitHub release URL]. The original raw platform responses, website URLs, platform-version identifiers and collection timestamps are no longer available. Thus, the reported calculations can be reproduced from the processed records, but the original platform observations and external source evidence cannot be independently verified. Source identifiers are coded labels and are not accessible website domains.
+
+Replace placeholders only after publishing. Check that the manuscript accurately reflects this scope and that the author has permission to share the data.

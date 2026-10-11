@@ -1,0 +1,9 @@
+Before making this repository public:
+[ ] Confirm that every data file can be shared publicly (rights, privacy, confidentiality).
+[ ] Check the paper's system/wave/provenance descriptions against the repository limitations.
+[ ] Review data collection and coding records if obtainable; no original raw responses are supplied here.
+[ ] Inspect model-generated-looking repeated phrasing; do not claim that passed computational tests establish live platform origin.
+[ ] Run the two commands in README.txt and confirm all tests pass.
+[ ] Add a concise GitHub repository description and choose a license only if permitted.
+[ ] Create a GitHub release with a fixed tag (e.g. v1.0.0), then connect it to Zenodo or upload the tagged release archive.
+[ ] Put final GitHub release URL and Zenodo DOI in the article Data Availability Statement.

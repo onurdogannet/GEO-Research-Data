@@ -1,0 +1,25 @@
+omitted_category,contrast,estimate,clusters
+wireless_headphones,Brand breadth: B - A,0.6577777777777776,30
+wireless_headphones,Product breadth: B - A,0.7722222222222221,30
+wireless_headphones,Recommendation probability: B - A,0.15777777777777777,30
+wireless_headphones,Within-wave overlap: brand - product,0.29937375415071493,30
+wireless_headphones,Product overlap: within - wording,0.014380459228498448,30
+wireless_headphones,Product overlap: within - between,0.015441343503537134,30
+robot_vacuum_cleaners,Brand breadth: B - A,0.6822222222222221,30
+robot_vacuum_cleaners,Product breadth: B - A,0.801111111111111,30
+robot_vacuum_cleaners,Recommendation probability: B - A,0.14666666666666667,30
+robot_vacuum_cleaners,Within-wave overlap: brand - product,0.29392641345582526,30
+robot_vacuum_cleaners,Product overlap: within - wording,0.008378924724512956,30
+robot_vacuum_cleaners,Product overlap: within - between,0.014501433150636582,30
+laptops,Brand breadth: B - A,0.6588888888888889,30
+laptops,Product breadth: B - A,0.7455555555555555,30
+laptops,Recommendation probability: B - A,0.1522222222222222,30
+laptops,Within-wave overlap: brand - product,0.28918371343616445,30
+laptops,Product overlap: within - wording,0.008449169113384796,30
+laptops,Product overlap: within - between,0.01300127251107643,30
+sunscreen_products,Brand breadth: B - A,0.7144444444444441,30
+sunscreen_products,Product breadth: B - A,0.851111111111111,30
+sunscreen_products,Recommendation probability: B - A,0.14666666666666667,30
+sunscreen_products,Within-wave overlap: brand - product,0.3062051624845743,30
+sunscreen_products,Product overlap: within - wording,0.014320125499047069,30
+sunscreen_products,Product overlap: within - between,0.010901419262019756,30
