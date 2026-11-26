@@ -1,0 +1,7 @@
+Constructed fictional shopping answer. No platform was queried.
+Options in display order:
+- DemoBeta Solo
+- DemoGamma Mini
+Comparison: DemoBeta Solo has 25 hours of stated battery life, compared with 20 hours for DemoGamma Mini.
+Advice: You could choose DemoGamma Mini first, followed by DemoBeta Solo, if the listed features meet your needs.
+Evidence-linked claim: DemoBeta Solo has a battery life of 25 hours and a warranty of 1 years [DOC_P_B1_S1].

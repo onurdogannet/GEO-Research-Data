@@ -1,0 +1,8 @@
+Constructed fictional shopping answer. No platform was queried.
+Options in display order:
+- DemoAlpha One extended
+- DemoBeta Solo
+- DemoGamma Mini
+Comparison: DemoAlpha One extended has 40 hours of stated battery life, compared with 25 hours for DemoBeta Solo.
+Advice: I recommend DemoGamma Mini first, followed by DemoAlpha One extended.
+Evidence-linked claim: DemoAlpha One extended has a battery life of 40 hours and a warranty of 2 years [DOC_P_A2_S2].

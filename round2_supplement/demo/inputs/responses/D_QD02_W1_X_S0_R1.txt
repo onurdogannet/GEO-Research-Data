@@ -1,0 +1,8 @@
+Constructed fictional shopping answer. No platform was queried.
+Options in display order:
+- DemoAlpha One (standard)
+- DemoBeta Solo model
+Comparison: DemoAlpha One (standard) has 30 hours of stated battery life, compared with 25 hours for DemoBeta Solo model.
+Advice: Choose DemoBeta Solo model first, followed by DemoAlpha One (standard); DemoBeta Solo model is clearly the best overall option for these needs.
+Overall choice: DemoBeta Solo model is my single overall choice for these needs.
+Evidence-linked claim: DemoAlpha One (standard) has a battery life of 30 hours and a warranty of 2 years [DOC_P_A1_S3].

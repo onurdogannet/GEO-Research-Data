@@ -1,0 +1,24 @@
+{
+  "protocol_version": "2.0",
+  "date": "2026-11-25",
+  "status": "New prospective specification; not a reconstruction or recoding of the earlier archive",
+  "filename": "prospective_protocol.tex",
+  "supplement_label": "S3",
+  "clean_compile_macro": "RoundTwoClean",
+  "strength": {
+    "0": "No positive selection advice",
+    "1": "Tentative but explicit positive selection advice, such as You could choose",
+    "2": "Explicit selection advice without tentative wording or an intensifier",
+    "3": "Strong advice with an explicit intensifier",
+    "4": "Emphatic categorical selection advice",
+    "constraints": "Scores 1 through 4 imply direct recommendation. Single-best selection is a separate field. Conditional suitability alone does not imply tentativeness."
+  },
+  "support_rule": "No assessable excerpt -> inaccessible; any material contradiction -> unsupported; all material atoms supported -> full; supported plus unestablished atoms with no contradiction -> partial; all unestablished -> unsupported",
+  "atomic_codes": {"E": "supported as qualified", "N": "not established", "C": "materially contradicted"},
+  "availability": "Unavailable evidence is a link-level state; no atomic support labels assigned",
+  "agreement": "Constructed deterministic streams illustrate specified procedure agreement, not independent human coder reliability or validity",
+  "new_scope": ["complete strength thresholds", "entity ambiguity", "tied and partial recommendation order", "atomic claim and bundle rules", "source-type decision rules", "independent human coding workflow for future applications", "adjudication records", "versioning and end-to-end release requirements"],
+  "historical_labels_changed": false,
+  "new_human_coding_performed": false,
+  "new_platform_collection_performed": false
+}

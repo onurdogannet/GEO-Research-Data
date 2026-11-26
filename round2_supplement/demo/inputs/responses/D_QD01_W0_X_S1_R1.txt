@@ -1,0 +1,9 @@
+Constructed fictional shopping answer. No platform was queried.
+Options in display order:
+- DemoAlpha One extended
+- DemoGamma Mini
+Comparison: DemoAlpha One extended has 40 hours of stated battery life, compared with 20 hours for DemoGamma Mini.
+Prioritization: DemoGamma Mini has a comfort advantage for everyday listening in this constructed example.
+Advice: I recommend DemoGamma Mini first, followed by DemoAlpha One extended.
+Overall choice: DemoGamma Mini is my single overall choice for these needs.
+Evidence-linked claim: DemoAlpha One extended has a battery life of 40 hours and a warranty of 2 years [DOC_P_A2_S2].

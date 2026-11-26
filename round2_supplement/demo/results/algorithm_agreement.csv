@@ -1,0 +1,4 @@
+field,n_pairs,raw_agreement,kappa,coefficient,interpretation
+direct_recommendation,32,0.84375,0.5789473684210527,nominal_kappa,agreement_between_two_authored_deterministic_procedures_only
+strength,32,0.59375,0.75,linearly_weighted_kappa,agreement_between_two_authored_deterministic_procedures_only
+bundle_support,32,0.5,0.3535353535353535,nominal_kappa,agreement_between_two_authored_deterministic_procedures_only

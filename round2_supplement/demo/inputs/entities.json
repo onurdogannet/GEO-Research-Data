@@ -1,0 +1,42 @@
+[
+  {
+    "product_id": "P_A1",
+    "brand_id": "B_A",
+    "brand_name": "DemoAlpha",
+    "family_id": "F_A",
+    "name": "DemoAlpha One standard",
+    "alias": "DemoAlpha One (standard)",
+    "battery_hours": 30,
+    "warranty_years": 2
+  },
+  {
+    "product_id": "P_A2",
+    "brand_id": "B_A",
+    "brand_name": "DemoAlpha",
+    "family_id": "F_A",
+    "name": "DemoAlpha One extended",
+    "alias": "DemoAlpha One (extended)",
+    "battery_hours": 40,
+    "warranty_years": 2
+  },
+  {
+    "product_id": "P_B1",
+    "brand_id": "B_B",
+    "brand_name": "DemoBeta",
+    "family_id": "F_B",
+    "name": "DemoBeta Solo",
+    "alias": "DemoBeta Solo model",
+    "battery_hours": 25,
+    "warranty_years": 1
+  },
+  {
+    "product_id": "P_C1",
+    "brand_id": "B_C",
+    "brand_name": "DemoGamma",
+    "family_id": "F_C",
+    "name": "DemoGamma Mini",
+    "alias": "DemoGamma Mini model",
+    "battery_hours": 20,
+    "warranty_years": 1
+  }
+]

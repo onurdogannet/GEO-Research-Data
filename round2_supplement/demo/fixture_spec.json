@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "origin": "New author-constructed fictional teaching example for revision round 2. No platform calls or human coding took place. This example does not rename or authenticate the earlier 2400-record archive.",
+  "queries": [
+    {"query_id":"QD01","need":"everyday listening","wordings":["Which wireless headphones should I consider for everyday listening?","For everyday listening, which wireless headphones should I consider?"]},
+    {"query_id":"QD02","need":"commuting","wordings":["Which wireless headphones would you recommend for commuting?","For commuting, which wireless headphones would you recommend?"]}
+  ],
+  "entities": [
+    {"product_id":"P_A1","brand_id":"B_A","brand_name":"DemoAlpha","family_id":"F_A","name":"DemoAlpha One standard","alias":"DemoAlpha One (standard)","battery_hours":30,"warranty_years":2},
+    {"product_id":"P_A2","brand_id":"B_A","brand_name":"DemoAlpha","family_id":"F_A","name":"DemoAlpha One extended","alias":"DemoAlpha One (extended)","battery_hours":40,"warranty_years":2},
+    {"product_id":"P_B1","brand_id":"B_B","brand_name":"DemoBeta","family_id":"F_B","name":"DemoBeta Solo","alias":"DemoBeta Solo model","battery_hours":25,"warranty_years":1},
+    {"product_id":"P_C1","brand_id":"B_C","brand_name":"DemoGamma","family_id":"F_C","name":"DemoGamma Mini","alias":"DemoGamma Mini model","battery_hours":20,"warranty_years":1}
+  ],
+  "scenario_patterns": {
+    "X":[["P_A1","P_B1"],["P_A1","P_A2"],["P_B1","P_C1"],["P_A2","P_C1"]],
+    "Y":[["P_A1","P_A2","P_B1"],["P_A1","P_B1","P_C1"],["P_A2","P_B1","P_C1"],["P_A1","P_A2","P_C1"]]
+  },
+  "source_types":["brand_manufacturer","specialist_review","retailer_marketplace","forum_social"],
+  "recipe": {
+    "indices":"q,w,s,r,c are zero-based; q,w,s,r in {0,1}; c=0 for X, c=1 for Y",
+    "display_pattern":"(2*q+w+2*s+r) modulo 4",
+    "recommendation_strength":"(q+2*w+s+r+c) modulo 5",
+    "source_case":"(q+w+s+r+c) modulo 4",
+    "source_cases":"0 exact battery and warranty; 1 exact battery and warranty not stated; 2 contradictory battery and exact warranty; 3 intentionally no document",
+    "recommendation_order":"last displayed product, then first displayed product when strength>0",
+    "single_best":"strength=4 or (strength>=2 and q=0)",
+    "prioritization":"include explicit criterion-specific prioritization when display_pattern is odd",
+    "aliases":"canonical name for wording0, declared alias for wording1",
+    "sampling":"census of all 32 constructed response units; one designated two-atom source-linked bundle per response"
+  }
+}

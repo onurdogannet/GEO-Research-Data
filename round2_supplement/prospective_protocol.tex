@@ -1,0 +1,261 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,xcolor,booktabs,longtable,array,tabularx,enumitem,amsmath,hyperref}
+\hypersetup{hidelinks}
+\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\tabcolsep}{4pt}
+\setlist[itemize]{leftmargin=5mm,itemsep=2pt,topsep=2pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=2pt,topsep=2pt}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newif\ifrevisionblue
+\ifdefined\RoundTwoClean\revisionbluefalse\else\revisionbluetrue\fi
+% Compile a black reading copy with:
+% pdflatex '\def\RoundTwoClean{1}\input{prospective_protocol.tex}'
+\AtBeginDocument{\ifrevisionblue\color{blue}\else\color{black}\fi}
+\begin{document}
+\begin{center}
+{\Large\bfseries Supplement S3}\\[3pt]
+{\Large\bfseries Prospective Coding Protocol}\\[4pt]
+Protocol version 2.0\quad Second revision\quad 25 November 2026
+\end{center}
+
+\section{Purpose and version boundaries}
+This protocol specifies how to apply the visibility framework to a new collection of shopping responses. It gives decision rules for entity identity, response roles, recommendation strength and order, source types, and support in preserved excerpts. The five role definitions and the separation of display order from recommendation order follow the manuscript. The intermediate strength thresholds, ambiguity rules, evidence decision priority, and recording procedures below are newly specified for prospective use. They do not reconstruct the missing history of the earlier 2400-record archive and have not been applied retrospectively to its labels.
+
+The accompanying constructed demonstration uses declared fictional responses and evidence texts to show the rules and calculations. Its deterministic coding procedures are documented software procedures. They are not independent human coders. This supplement provides instructions for future human coding; it reports no completed human-coding study or external validation.
+
+Freeze the protocol version, input set, entity dictionary, and claim frame before final coding. Record a reason for every later change. If a rule changes, identify the affected units, code them again under the new version, and keep both versions. Do not combine labels from different rule versions without identifying the difference.
+
+\section{Inputs that must be preserved}
+For a new platform collection, preserve each prompt exactly as sent, including the common instruction, conversation history, and attached inputs. Retain the complete response in its original format before normalization. Keep a readable copy and a byte-preserving original whenever available. Store a cryptographic hash for each immutable input and identify the software version that creates every derivative.
+
+\begin{tabularx}{\textwidth}{L{3.5cm}Y}
+\toprule Record & Required fields \\
+\midrule
+Acquisition event & Event ID; UTC timestamp; platform and interface; requested and returned model identifiers; visible version; locale; account/session condition; available settings; web-search status; request/response IDs when available; errors and retries. Unexposed settings are recorded as unknown. \\
+Prompt and design & Base-query ID; exact wording; declared task and constraints; category; wording ID; condition; repetition; actual collection event or snapshot. A repeated index alone does not establish a shared retrieval state. \\
+Response & Response ID; original bytes or export; complete visible text; citation markers; ordering and formatting; completion status; input hash; transformation log. \\
+Source & Source ID; exact supplied URL and resolved URL; retrieval time and status; full preserved text or permitted page capture; title and publisher metadata; hash; extraction method; excerpt boundaries. \\
+Coding & Unit ID; protocol and dictionary versions; coder or procedure ID; evidence spans; independent labels; uncertainty and reason; adjudication record; final label. \\
+\bottomrule
+\end{tabularx}
+
+For future comparisons intended to isolate wording, assess the variants before collecting responses. Give independent assessors the paired prompts and require separate judgments of the shopping task, attributes, budget, use context, and strength of requested advice. Retain their judgments and disagreement reasons, resolve disputed constraints before freezing the instrument, and report the assessment procedure. Constraint matching alone does not prove semantic equivalence. This assessment has not been conducted for either collection described in this revision.
+
+For a constructed example, replace acquisition metadata with the exact construction specification, fixture files, generator version, and any seed. State that the texts were constructed. Never assign a commercial platform name or a fictitious retrieval timestamp to a constructed record. The original archive, a new platform collection, and a new constructed example must have separate dataset identifiers.
+
+\section{Coding units and missing information}
+Use a response unit for the five decision components. Use an entity-in-response unit for identity, mention spans, advice, and order. Use a source-in-response unit for the source type. Use a claim--source link for support; the same claim linked to two sources creates two link units. Preserve the relationship between atomic claims and their parent claim bundle.
+
+Keep three distinct states for a binary field: 1 means present, 0 means assessed and absent, and missing means not assessable. A complete refusal without product content can have all five role fields equal to 0. A missing or truncated response is not an all-zero response. Keep missing, ambiguous, and ineligible counts in each table and explain every denominator.
+
+\medskip
+\section{Entity resolution and appearance counts}
+\subsection{Resolve identity before counting}
+Create a versioned dictionary with the observed surface form, canonical brand ID, strict-product ID, family ID, generation, configuration, and market or region when these distinguish products. Preserve the exact mention span in the original response. Apply the following rules in order.
+
+\begin{enumerate}
+\item Match an exact canonical name or a documented alias. Case, whitespace, and punctuation normalization may support lookup, but the original text remains unchanged.
+\item Merge spelling variants only when the available description identifies the same product. Record the alias, evidence, and decision. Do not merge different products simply because their names are similar.
+\item Retain different generations, capacities, packages, or regional variants as different strict products when the dictionary distinguishes them. A family may merge only the specific strict IDs declared in the family map.
+\item Resolve a brand even when the product is unresolved, if the brand is explicit and unambiguous. Do not infer a product from the brand's most familiar model.
+\item For an ambiguous product mention, retain its surface form, candidate IDs, and ambiguity reason. Do not assign a strict ID until the recorded evidence resolves it. A generic phrase such as ``an inexpensive headset'' is not a named product.
+\end{enumerate}
+
+For a future real-system study, an external product page can resolve a product only if the response itself supplies enough identifying information. Record the resolving page and its preserved evidence. External search must not silently add a missing generation or configuration. A descriptive fictitious product in a constructed fixture may have a declared identity; that identity is part of the fixture specification and is not evidence of a real product.
+
+\subsection{Count appearance separately from endorsement}
+Count each resolved brand and strict product at most once within a response, regardless of repeated mentions. Count identifiable products mentioned in negative advice as appearances, and keep their negative-advice status separately. Report brand-only mentions, unresolved-product mentions, and generic references separately. A strict-product breadth based only on resolved IDs is a resolved-entity count; it is not a claim that the response contains no other products.
+
+Use the declared family map for a separate sensitivity calculation. A family is not the same as a brand. Report the strict and family counts together when the choice changes a conclusion. Do not alter the dictionary after viewing the desired comparison without retaining and reporting the change.
+
+\subsection{Worked identity cases}
+All names in the examples below are fictional. They are authored examples, not quotations from a platform.
+
+\begin{tabularx}{\textwidth}{L{4.4cm}Y}
+\toprule Observed wording & Coding decision \\
+\midrule
+``Alder One 64'' and ``ALDER One-64'' & One strict product only if the dictionary explicitly records the second form as an alias of the first. Repetition adds no appearance. \\
+``Alder One 64'' and ``Alder One 128'' & Two strict products, one brand. They may share one family only if the supplied family map declares that relationship. \\
+``Alder One'', with 64 and 128 both possible & Brand Alder is resolved; strict product is unresolved. Preserve both candidate IDs. Do not assume the 64 version. \\
+``Avoid Alder One 64 for this task'' & The product and brand appear. Negative advice is present; a positive direct recommendation is absent unless another passage supplies it. \\
+``Choose an inexpensive headset'' & Selection advice has no identifiable option. It does not satisfy this framework's entity-specific direct-recommendation indicator. \\
+\bottomrule
+\end{tabularx}
+
+\section{Evidence spans and coding reasons}
+Every positive decision-role label and every recommendation-strength score above 0 must cite the supporting response span. A zero label can refer to the complete inspected response. An ambiguity label records the competing readings and the rule that could not resolve them. Use stable offsets or passage IDs and retain the text on which those offsets were calculated. Any normalization that changes offsets must supply a mapping back to the original text.
+
+\medskip
+\section{Five separate decision components}
+Code the following indicators independently. They describe what the response does. They are not an exclusive hierarchy, a measure of correctness, or a measure of consumer acceptance.
+
+\begin{longtable}{L{3.2cm}L{6.0cm}L{6.2cm}}
+\toprule Component & Positive rule & Boundary case \\
+\midrule\endhead
+Information & States a property, feature, use, price, or other description of an identifiable option. & Merely listing names without descriptive content does not establish this component. A false description can still be information; accuracy is assessed separately. \\
+Comparison & Explicitly relates two or more identifiable options on a common criterion. A table qualifies if its shared columns explicitly align the options. & Separate, unrelated descriptions do not automatically establish a comparison. \\
+Prioritization & Identifies an advantage on a stated criterion or a preferred subset of options. & ``Alder lasts longer than Birch'' can establish comparison and criterion-specific prioritization without selection advice. \\
+Direct recommendation & Gives positive selection-oriented advice for an identifiable option or defined set of identifiable options for the stated need. & ``You could choose Alder'' qualifies. A numbered list or ``Alder has long battery life'' does not. Negative advice alone does not qualify. \\
+Single-best selection & Explicitly selects one identifiable product as the overall preferred choice for the stated need. It must also satisfy direct recommendation. & Separate ``best for travel'' and ``best for calls'' labels do not establish one overall winner. A tie between two products is not a single-best selection. \\
+\bottomrule
+\end{longtable}
+
+An unqualified claim that an option is the ``best overall choice for your stated needs'' conveys selection advice and can establish single-best selection. The word ``best'' in a criterion-specific comparison does not by itself establish an overall choice. Neither case fixes the strength score: intensity is evaluated using the scale in Section~\ref{sec:strength}.
+
+Treat a phrase such as ``worth considering'' in context. It identifies a potentially useful option but does not automatically advise selecting it. ``Consider Alder as one of the options'' is tentative shortlist advice only if the passage directs the reader to include that identifiable product in a choice set; record the direct-recommendation decision and its span. The controlled demonstration uses explicit ``choose'' or ``recommend'' wording to avoid depending on this boundary case.
+
+\section{Display order and recommendation order}
+Preserve the original layout. Record the first mention of each resolved product in the displayed reading order; later mentions do not add list positions. For a table, use its explicit product-row order. For a document whose reading order is ambiguous, retain the structure and flag the affected display positions as ambiguous.
+
+Keep the following order fields separate:
+\begin{itemize}
+\item \textbf{Display sequence}: the products in first-appearance order.
+\item \textbf{Recommendation occurrence sequence}: the products in order of their first explicit positive selection advice. This is a text-order measure, not necessarily a preference ranking.
+\item \textbf{Preference tiers}: only the priority or ties that the response explicitly states. Do not invent a complete ranking when the text supplies a partial order.
+\end{itemize}
+
+``First, I describe Alder; however, I recommend Birch'' gives Alder the first display position and Birch the first recommendation occurrence. ``Choose Alder or Birch; either is equally suitable'' gives a tied recommendation group; the written name order does not break the preference tie. For a metric requiring one first recommended product, exclude the tied-first group or use a separately declared set-valued comparison. Report this eligibility rule and the excluded count. Negative advice has its own sequence and never supplies a positive recommendation position. The demonstration uses a unique explicit leading recommendation. Multiple recommendations without a declared priority are ineligible even when their textual occurrence order is known. One sole positive recommendation has a unique leader. Preserve occurrence order separately whenever it differs from explicit preference order.
+
+An explicit correction, such as ``Correction: choose Birch instead of Alder'', can supersede earlier advice when the correction clearly does so; preserve both spans and the correction rule. Conflicting advice without a clear correction receives an ambiguity flag for the affected product. Do not resolve it by taking the last sentence automatically. Unambiguous advice about other products remains codable.
+
+\medskip
+\section{Recommendation strength}\label{sec:strength}
+This is a newly specified ordinal scale for prospective use. It measures the expressed intensity of positive selection advice. It does not measure accuracy, confidence calibration, product quality, or the uniqueness of an overall choice. Use the complete recommendation passage, including its qualifications. Record an entity-level score, then summarize a response by the highest unambiguous positive score. If an unresolved passage could change that maximum, mark the response score as missing with an ambiguity reason.
+
+\begin{longtable}{L{1.0cm}L{3.0cm}L{6.1cm}L{5.3cm}}
+\toprule Score & Label & Operational rule & Authored fictional example \\
+\midrule\endhead
+0 & No positive selection advice & No identifiable option receives positive selection advice. This includes description, comparison, criterion-specific praise, and negative advice alone. & ``Alder One weighs 200 grams.'' \\
+1 & Tentative selection advice & An identifiable option is proposed for selection with tentative language such as ``could choose'' or ``might choose''. The wording must still advise a choice. & ``You could choose Alder One if low weight matters most.'' \\
+2 & Explicit selection advice & A direct choice or recommendation is given without tentative language or an explicit intensifier. A relevant condition does not by itself make the advice tentative. & ``I recommend Alder One for commuting.'' \\
+3 & Strong selection advice & Explicit advice is strengthened by words such as ``strongly recommend'' or ``my clear recommendation'', without a categorical claim excluding reasonable alternatives. & ``I strongly recommend Alder One for this use.'' \\
+4 & Emphatic categorical advice & Explicit choice advice is combined with emphatic or categorical endorsement, for example ``without reservation'' or an emphatic insistence that the option is clearly the best overall choice for the stated need. & ``Choose Alder One; it is clearly the best overall option for these needs.'' \\
+\bottomrule
+\end{longtable}
+
+Scores 1--4 imply direct recommendation. Score 0 does not imply that no product appears. ``I recommend Alder One if low weight is your priority'' receives 2 because the condition specifies suitability; the advice is not tentative. ``You could choose Alder One'' receives 1. ``Alder has the best battery life'' receives 0 unless the surrounding passage also advises a choice.
+
+Apply an intensifier only to the advice it modifies. ``Alder has very strong noise reduction'' describes a feature and does not give strength 3. ``I strongly recommend checking the warranty'' is an action recommendation; it does not endorse an identifiable product. Quoted praise attributed to someone else is not the response's own recommendation unless the response adopts it.
+
+Do not use punctuation, capitalization, repetitions, or a numeric rank alone to raise the score. When both tentative and emphatic wording govern the same advice and their meaning cannot be resolved from the full passage, retain an ambiguity label rather than choosing the higher value. An explicit caution about a product limitation can coexist with strong advice; preserve the caution separately and code the actual selection language.
+
+\subsection{Strength and single-best selection can differ}
+``I recommend Alder One as the overall choice for your needs'' gives strength 2 and single-best 1. ``I strongly recommend Alder One for travel and Birch Two for home use'' can give strength 3 and single-best 0. ``Alder One has the best battery life; Birch Two has the best microphone'' can give prioritization 1, direct recommendation 0, strength 0, and single-best 0.
+
+These examples define coding decisions for the written passages. They do not validate the scale as a psychological measure. A future application should retain the complete coding records and examine whether independent coders can apply the thresholds consistently.
+
+\medskip
+\section{Claims and support in preserved evidence}
+\subsection{Define the claim frame before judging support}
+Identify a factual proposition with a product, predicate, value, and relevant conditions. Preserve the exact response span. Separate independently assessable assertions into atomic propositions. For example, ``Alder lasts 30 hours and has a two-year warranty'' contains two atoms. If the analysis also reports a bundle-level classification, keep both atoms under one bundle ID and apply the aggregation rule below. Never substitute an atomic support rate for a bundle support rate.
+
+Retain numerical units, bounds such as ``up to'', model configuration, jurisdiction, time reference, and use conditions when they affect meaning. ``Up to 30 hours with cancellation off'' does not support an unqualified promise of 30 hours under all settings. A subjective preference such as ``my favorite color'' is not a factual product claim unless it adds an independently assessable assertion. Record why excluded passages are outside the support frame.
+
+Map each citation marker to the proposition or bundle it appears to support. Do not assume that one marker at the end of a paragraph supports every preceding sentence when its scope is unclear; record ambiguous linkage. Keep multi-source links separate. A source may be fully supportive of one atom and irrelevant to another. Evidence pooling across sources requires a separately specified analysis and denominator.
+
+\subsection{Preserve evidence before extracting an excerpt}
+Save the complete source text or permitted capture and its retrieval status. Extract the smallest passage that preserves the relevant qualifications and surrounding context, and record start/end offsets or page/paragraph locators. Keep headings, notes, and conditions that affect the claim. Never silently paraphrase the source into an excerpt. If access fails, preserve the failure status and access attempt. No assessable source text gives an inaccessible link, even if a plausible title or URL exists.
+
+For a constructed example, retain the complete fictional source text and exact excerpt offsets. Label the source as constructed. Its content can illustrate textual support, but it cannot establish the truth of a real product claim or the accuracy of a live citation.
+
+\subsection{Atomic decisions and bundle decision priority}
+For each atomic proposition under an assessable link, code \textbf{E} when the excerpt supports it as qualified, \textbf{N} when the excerpt does not establish it, and \textbf{C} when the excerpt explicitly contradicts a material element. Missing evidence is a link-level availability state, not an unsupported atom. Treat a contradiction as material when it changes the stated product, property, value, or condition rather than merely using different wording.
+
+\begin{tabularx}{\textwidth}{L{3.2cm}Y}
+\toprule Bundle class & Ordered decision rule \\
+\midrule
+Inaccessible & No assessable excerpt is available for this link. Stop before assigning E, N, or C to its atoms. \\
+Unsupported & The excerpt is assessable and at least one material atom is C, even when another atom is E. Also use this class when all atoms are N. \\
+Full support & Every material atom is E. All relevant qualifications must be preserved. \\
+Partial support & At least one atom is E and at least one is N, with no atom C. \\
+\bottomrule
+\end{tabularx}
+
+This priority makes mixed support and contradiction reproducible. For a two-atom duration/warranty bundle, E+E gives full support, E+N gives partial support, E+C gives unsupported, and N+N gives unsupported. An unavailable source gives inaccessible. Store the atomic decisions alongside the bundle label so that a reader can distinguish contradiction from lack of support. Report support as a relationship between a claim and the retained evidence; do not call it verified external truth.
+
+\medskip
+\section{Source type and mixed-purpose pages}
+Assign source type at the source-in-response unit, using the preserved page and its documented publisher or hosting function. Do not infer the type from whether the source agrees with the response. Keep the classification rationale and distinguish hosting function from the attributed author of an excerpt.
+
+\begin{longtable}{L{3.8cm}L{11.6cm}}
+\toprule Primary type & Decision rule \\
+\midrule\endhead
+Brand or manufacturer & The product brand or manufacturer publishes the source in its own capacity. A manufacturer's store remains this type when the publisher is the manufacturer. \\
+Retailer or marketplace & The source is hosted as part of a seller's or marketplace's commercial product service, and the primary publisher is not the product manufacturer. Customer comments on that product page do not change the primary hosting type. \\
+Specialist review & The publisher primarily provides product testing, specialist reviews, or product advice, rather than selling the cited product. Record sponsorship or affiliate disclosure separately when available. \\
+General news & The cited page is published by a general news outlet within its reporting function. A product story does not automatically turn the publisher into a specialist review outlet. \\
+Forum or social content & The cited page's primary function is a user discussion, social post, or public community contribution. Preserve the post's attributed author and context when available. \\
+Institutional & The page is an official publication of a public, academic, research, or similar institution in that institutional capacity. A manufacturer's corporate research page remains brand/manufacturer under the preceding rule. \\
+Other & Sufficient metadata exists, but none of the six preceding types fits. Record an explicit reason; do not use this class as a substitute for missing metadata. \\
+\bottomrule
+\end{longtable}
+
+When a page serves multiple functions, use the publisher/hosting rule for the primary type and retain secondary flags for sales, review, advertising, and user-generated content. For an excerpt from a customer review on a retailer page, primary type is retailer/marketplace and excerpt authorship is customer. The source function and the evidential quality are separate variables. A sales page can support a narrow labelled specification; a review page can fail to support the cited claim.
+
+If the publisher or page function cannot be assessed, record missing source type and the reason. In a constructed demonstration, a fictional source type may be assigned from declared fixture metadata; it is a construction attribute, not an independently verified publisher classification.
+
+\section{Ambiguous cases and disagreements}\label{sec:disagreements}
+Code the observable content first and record uncertainty at the field that is affected. Do not discard the entire response because one entity or claim is ambiguous. A response-level direct-recommendation indicator is 1 if at least one unambiguous positive product recommendation is present; it is missing if only potentially qualifying ambiguous advice exists. Otherwise it is 0. Single-best is 1 only when one overall selection is unambiguous; a deliberate tie gives 0, while unresolved conflicting overall advice gives missing.
+
+An uncertain claim--citation attachment has a missing linkage status; it is not automatically an inaccessible source. A known link with no retrievable excerpt is inaccessible. A fully assessable excerpt with no support is unsupported. These states require separate counts because they represent different failures in the evidence chain.
+
+Before adjudication, preserve each coder's complete decisions. For every disagreement, record the original labels, relevant spans, each rationale, applicable rule, adjudicator or consensus procedure, final decision, and whether the case caused a protocol change. Do not overwrite the independent labels with the final decision. Agreement statistics use the pre-adjudication labels. Final descriptive tables may use adjudicated labels when that procedure is explicitly reported.
+
+\medskip
+\section{Human coding and automated procedures}
+\subsection{Prospective human-coding workflow}
+The following steps specify a future study. They do not describe work already performed for the constructed demonstration.
+
+\begin{enumerate}
+\item Register coder identifiers, relevant training, the protocol version, and the units each coder will assess. Use training examples outside the final agreement sample. Record training revisions before the protocol is frozen.
+\item Define the agreement sample and sampling rule in advance. Include eligible units across the intended conditions. Preserve selection probabilities if a stratified sampling design uses unequal probabilities.
+\item Give coders the same original response and source materials. Keep their coding independent until both label streams are saved. When feasible, mask system identity and comparison hypotheses without removing content needed for coding.
+\item Retain labels, spans, reasons, missing decisions, and coding dates. Record any access to external sources and preserve the added evidence so that both coders' information sets can be compared.
+\item Compute agreement from the independent labels. Then resolve disagreements using the recorded procedure in Section~\ref{sec:disagreements}. Keep the original and final datasets separate.
+\end{enumerate}
+
+Report the number of coders, independence arrangements, training and adjudication procedures, unit counts, missing counts, label distributions, and every rule change. Agreement alone does not establish that the labels are correct. Any criterion-validity claim requires separately justified reference evidence, not a high kappa value.
+
+\subsection{Automated and constructed label streams}
+An automated procedure must have a stable identifier, versioned code or exact model/prompt specification, documented inputs, and a declared output schema. Record randomness and decoding settings when applicable. Preserve intermediate parsing, entity matches, evidence spans, and decision rules. A human correction becomes a separate intervention in the processing log.
+
+For a controlled constructed example, define the grammar the parser accepts and reject or flag inputs outside that grammar. Show how text and metadata produce labels. If a second procedure intentionally uses a different threshold or evidence rule, identify that difference explicitly and retain both outputs. The resulting agreement coefficient measures agreement between those specified procedures on those fixtures. It does not measure independent coder reliability, general text-understanding accuracy, or validity on operational responses. Two tools that share rules, training data, or inputs should not be described as independent merely because their names differ.
+
+\section{Agreement statistics and denominators}
+For a binary or nominal variable, show the contingency table, marginal label frequencies, number of eligible paired units, raw agreement, and Cohen's kappa. For recommendation strength, retain the full 0--4 contingency table and use linear agreement weights $w_{ij}=1-|i-j|/4$. Report the weighting convention. Keep the nominal support categories separate; they are not an ordinal scale.
+
+Report both-complete paired units and all excluded or missing units. Complete-case agreement is conditional on that eligibility and may hide difficult cases, so show the missingness pattern by condition. If expected agreement is one, kappa is undefined; do not replace it with perfect reliability. A constant component can have complete observed agreement without a meaningful kappa.
+
+When sampling variability is an inferential goal, resample at the base-query level and preserve all dependent observations and paired labels within a sampled query. State the population or instrument to which uncertainty refers. A small deliberately constructed set has no sampling-based generalization: exact descriptive coefficients are sufficient, and adding a confidence interval does not turn it into a validation sample.
+
+\medskip
+\section{Worked coding paths}
+All passages and evidence descriptions below are constructed teaching examples. The table shows how distinct fields can lead to different conclusions for the same response. It does not reproduce a historical or live-system response.
+
+\begin{longtable}{L{4.4cm}L{6.4cm}L{4.6cm}}
+\toprule Example & Result and reason & Retained evidence \\
+\midrule\endhead
+``Alder One lasts 30 hours. Birch Two lasts 20 hours.'' & Information 1. Comparison and prioritization require explicit relational framing or a shared comparison table; two unrelated sentences alone do not force either label. Direct recommendation 0; strength 0; single-best 0. & Both description spans; entity aliases; response context. \\
+``Alder One lasts longer than Birch Two.'' & Information 1; comparison 1; prioritization 1 for battery duration. Direct recommendation 0; strength 0; single-best 0. & The explicit relation and its criterion. \\
+``Alder One appears first in the list. I recommend Birch Two as the overall choice for your needs.'' & First display is Alder; first recommendation is Birch. Direct recommendation 1; strength 2; single-best 1 for Birch. & Both order spans and the overall-choice phrase. \\
+``You could choose Alder One if low weight matters most.'' & Direct recommendation 1; strength 1. No single overall choice is established across all stated needs. & Tentative choice verb and condition. \\
+``Choose Alder One or Birch Two; either is equally suitable.'' & Direct recommendation 1; strength 2. Recommendation group is tied; single-best 0; unique-first recommendation metric ineligible. & Tied group and equality wording. \\
+``Alder lasts 30 hours and has a two-year warranty.'' Source text states 30 hours but says nothing about warranty. & Atomic labels E and N; bundle partial support. The absent warranty fact is not fabricated as a contradiction. & Complete source; excerpt offsets; both atomic spans. \\
+The same claim; source states 30 hours and a one-year warranty. & Atomic labels E and C; bundle unsupported because a material contradiction takes priority. & Warranty statement and its applicable conditions. \\
+The same claim; linked source cannot be retrieved and no preserved excerpt exists. & Inaccessible. Atomic support is not assessed; this outcome does not imply that either product claim is false. & Source locator, failed retrieval status, and lack of preserved text. \\
+\bottomrule
+\end{longtable}
+
+\section{Release and consistency checks}
+Release the frozen protocol, exact inputs or documented construction files, full query instrument, entity dictionary and alias history, source captures or declared fictional sources, excerpts and offsets, atomic claim frame, independent or procedure-specific labels, disagreement records, analysis scripts, and generated tables. Include a file manifest with hashes, software versions, and a single documented reproduction command. Separate raw inputs, coded outputs, adjudicated outputs, and analysis results so that no step silently replaces its own input.
+
+Check that every cited entity and claim links to retained text; all IDs resolve; a single-best product occurs in the response; single-best implies direct recommendation; strength above 0 implies direct recommendation; duplicated mentions do not increase breadth; source availability agrees with the support decision; and reported denominators reconcile with included, missing, and ineligible units. Check ties and joint-empty product sets explicitly. Joint-empty Jaccard overlap is undefined under the manuscript's convention.
+
+The constructed demonstration can verify that declared rules and arithmetic produce the reported results. It cannot repair the earlier archive's missing provenance or establish how well the procedure works on uncontrolled platform responses. A future application must retain its own acquisition and coding evidence and assess those additional questions directly.
+\end{document}

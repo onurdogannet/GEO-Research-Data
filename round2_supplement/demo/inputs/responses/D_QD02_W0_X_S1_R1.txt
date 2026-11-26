@@ -1,0 +1,8 @@
+Constructed fictional shopping answer. No platform was queried.
+Options in display order:
+- DemoAlpha One standard
+- DemoAlpha One extended
+Comparison: DemoAlpha One standard has 30 hours of stated battery life, compared with 40 hours for DemoAlpha One extended.
+Prioritization: DemoAlpha One extended has a comfort advantage for commuting in this constructed example.
+Advice: I strongly recommend DemoAlpha One extended first, followed by DemoAlpha One standard.
+Evidence-linked claim: DemoAlpha One standard has a battery life of 30 hours and a warranty of 2 years [DOC_P_A1_S3].

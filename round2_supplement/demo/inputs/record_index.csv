@@ -1,0 +1,33 @@
+record_id,query_id,wording,scenario,snapshot,replicate,prompt,response_path,origin
+D_QD01_W0_X_S0_R0,QD01,0,X,0,0,Which wireless headphones should I consider for everyday listening?,responses/D_QD01_W0_X_S0_R0.txt,new_authored_fictional_fixture
+D_QD01_W0_X_S0_R1,QD01,0,X,0,1,Which wireless headphones should I consider for everyday listening?,responses/D_QD01_W0_X_S0_R1.txt,new_authored_fictional_fixture
+D_QD01_W0_X_S1_R0,QD01,0,X,1,0,Which wireless headphones should I consider for everyday listening?,responses/D_QD01_W0_X_S1_R0.txt,new_authored_fictional_fixture
+D_QD01_W0_X_S1_R1,QD01,0,X,1,1,Which wireless headphones should I consider for everyday listening?,responses/D_QD01_W0_X_S1_R1.txt,new_authored_fictional_fixture
+D_QD01_W0_Y_S0_R0,QD01,0,Y,0,0,Which wireless headphones should I consider for everyday listening?,responses/D_QD01_W0_Y_S0_R0.txt,new_authored_fictional_fixture
+D_QD01_W0_Y_S0_R1,QD01,0,Y,0,1,Which wireless headphones should I consider for everyday listening?,responses/D_QD01_W0_Y_S0_R1.txt,new_authored_fictional_fixture
+D_QD01_W0_Y_S1_R0,QD01,0,Y,1,0,Which wireless headphones should I consider for everyday listening?,responses/D_QD01_W0_Y_S1_R0.txt,new_authored_fictional_fixture
+D_QD01_W0_Y_S1_R1,QD01,0,Y,1,1,Which wireless headphones should I consider for everyday listening?,responses/D_QD01_W0_Y_S1_R1.txt,new_authored_fictional_fixture
+D_QD01_W1_X_S0_R0,QD01,1,X,0,0,"For everyday listening, which wireless headphones should I consider?",responses/D_QD01_W1_X_S0_R0.txt,new_authored_fictional_fixture
+D_QD01_W1_X_S0_R1,QD01,1,X,0,1,"For everyday listening, which wireless headphones should I consider?",responses/D_QD01_W1_X_S0_R1.txt,new_authored_fictional_fixture
+D_QD01_W1_X_S1_R0,QD01,1,X,1,0,"For everyday listening, which wireless headphones should I consider?",responses/D_QD01_W1_X_S1_R0.txt,new_authored_fictional_fixture
+D_QD01_W1_X_S1_R1,QD01,1,X,1,1,"For everyday listening, which wireless headphones should I consider?",responses/D_QD01_W1_X_S1_R1.txt,new_authored_fictional_fixture
+D_QD01_W1_Y_S0_R0,QD01,1,Y,0,0,"For everyday listening, which wireless headphones should I consider?",responses/D_QD01_W1_Y_S0_R0.txt,new_authored_fictional_fixture
+D_QD01_W1_Y_S0_R1,QD01,1,Y,0,1,"For everyday listening, which wireless headphones should I consider?",responses/D_QD01_W1_Y_S0_R1.txt,new_authored_fictional_fixture
+D_QD01_W1_Y_S1_R0,QD01,1,Y,1,0,"For everyday listening, which wireless headphones should I consider?",responses/D_QD01_W1_Y_S1_R0.txt,new_authored_fictional_fixture
+D_QD01_W1_Y_S1_R1,QD01,1,Y,1,1,"For everyday listening, which wireless headphones should I consider?",responses/D_QD01_W1_Y_S1_R1.txt,new_authored_fictional_fixture
+D_QD02_W0_X_S0_R0,QD02,0,X,0,0,Which wireless headphones would you recommend for commuting?,responses/D_QD02_W0_X_S0_R0.txt,new_authored_fictional_fixture
+D_QD02_W0_X_S0_R1,QD02,0,X,0,1,Which wireless headphones would you recommend for commuting?,responses/D_QD02_W0_X_S0_R1.txt,new_authored_fictional_fixture
+D_QD02_W0_X_S1_R0,QD02,0,X,1,0,Which wireless headphones would you recommend for commuting?,responses/D_QD02_W0_X_S1_R0.txt,new_authored_fictional_fixture
+D_QD02_W0_X_S1_R1,QD02,0,X,1,1,Which wireless headphones would you recommend for commuting?,responses/D_QD02_W0_X_S1_R1.txt,new_authored_fictional_fixture
+D_QD02_W0_Y_S0_R0,QD02,0,Y,0,0,Which wireless headphones would you recommend for commuting?,responses/D_QD02_W0_Y_S0_R0.txt,new_authored_fictional_fixture
+D_QD02_W0_Y_S0_R1,QD02,0,Y,0,1,Which wireless headphones would you recommend for commuting?,responses/D_QD02_W0_Y_S0_R1.txt,new_authored_fictional_fixture
+D_QD02_W0_Y_S1_R0,QD02,0,Y,1,0,Which wireless headphones would you recommend for commuting?,responses/D_QD02_W0_Y_S1_R0.txt,new_authored_fictional_fixture
+D_QD02_W0_Y_S1_R1,QD02,0,Y,1,1,Which wireless headphones would you recommend for commuting?,responses/D_QD02_W0_Y_S1_R1.txt,new_authored_fictional_fixture
+D_QD02_W1_X_S0_R0,QD02,1,X,0,0,"For commuting, which wireless headphones would you recommend?",responses/D_QD02_W1_X_S0_R0.txt,new_authored_fictional_fixture
+D_QD02_W1_X_S0_R1,QD02,1,X,0,1,"For commuting, which wireless headphones would you recommend?",responses/D_QD02_W1_X_S0_R1.txt,new_authored_fictional_fixture
+D_QD02_W1_X_S1_R0,QD02,1,X,1,0,"For commuting, which wireless headphones would you recommend?",responses/D_QD02_W1_X_S1_R0.txt,new_authored_fictional_fixture
+D_QD02_W1_X_S1_R1,QD02,1,X,1,1,"For commuting, which wireless headphones would you recommend?",responses/D_QD02_W1_X_S1_R1.txt,new_authored_fictional_fixture
+D_QD02_W1_Y_S0_R0,QD02,1,Y,0,0,"For commuting, which wireless headphones would you recommend?",responses/D_QD02_W1_Y_S0_R0.txt,new_authored_fictional_fixture
+D_QD02_W1_Y_S0_R1,QD02,1,Y,0,1,"For commuting, which wireless headphones would you recommend?",responses/D_QD02_W1_Y_S0_R1.txt,new_authored_fictional_fixture
+D_QD02_W1_Y_S1_R0,QD02,1,Y,1,0,"For commuting, which wireless headphones would you recommend?",responses/D_QD02_W1_Y_S1_R0.txt,new_authored_fictional_fixture
+D_QD02_W1_Y_S1_R1,QD02,1,Y,1,1,"For commuting, which wireless headphones would you recommend?",responses/D_QD02_W1_Y_S1_R1.txt,new_authored_fictional_fixture

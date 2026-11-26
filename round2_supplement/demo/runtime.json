@@ -1,0 +1,7 @@
+{
+  "python": "3.12.14",
+  "implementation": "CPython",
+  "dependencies": "Python standard library only",
+  "randomness": "none",
+  "version": "1.0.0"
+}
